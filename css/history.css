@@ -1,0 +1,135 @@
+@font-face{
+    src: url('/font');
+    font-family: jojar;
+}
+:root{
+    --color: #333;
+    --back: #fff;
+}
+body{
+    margin: 0;
+    background: var(--back);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: jojar;
+}
+nav{
+    width: 100%;
+    padding: 9px 0;
+    background: royalblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .left{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+nav .left a{
+    font-size: 18px;
+    padding: 5px;
+    color: var(--back);
+    margin-right: 7px;
+}
+nav .left h1{
+    margin: 5px;
+    color: var(--back);
+    font-size: 27px;
+}
+.link{
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+.link a{
+    padding: 5px;
+    margin: 3px 9px;
+    color: var(--back);
+    font-size: 19px;
+}
+.box{
+    width: 555px;
+    margin-top: 9px;
+}
+.box h1{
+    margin: 5px;
+    color: var(--color);
+    font-size: 27px;
+}
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 91%;
+    transition: 0.4s;
+    padding: 7px 0;
+    margin: 3px auto;
+    border-radius: 5px;
+    position: relative;
+}
+
+.item span{
+    background: royalblue;
+    color: var(--back);
+    padding: 9px 15px;
+    border-radius: 4px;
+    font-size: 17px;
+    position: absolute;
+    left: 24px;
+    transition: 0.4s;
+    bottom: -69px;
+    opacity: 0;
+    margin: 0;
+    z-index: 1;
+}
+.item:hover span{
+    display: flex;
+    opacity: 1;
+    bottom: -42px;
+}
+.item span::before{
+    content: "";
+    background: royalblue;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -5px;
+    transform: rotate(45deg);
+    left: 9px;
+}
+.item:hover{
+    background: #dcdcdc42;
+}
+.item h2{
+    margin: 5px;
+    margin-left: 15px;
+    font-size: 24px;
+    color: var(--color);
+}
+.item p{
+    margin: 5px;
+    margin-right: 15px;
+    color: var(--color);
+    font-size: 16px;
+}
+
+@media(max-width:580px){
+    .box{
+        width: 96%;
+    }
+}
+@media(max-width:500px){
+    nav{padding: 5px 0;}
+    nav .left{margin-left: 9px;}
+    nav .left a{font-size: 17px;}
+    nav .left h1{font-size: 5.5vw;}
+    nav .link{margin-right: 9px;}
+    nav .link a{font-size: 17px;}
+    .box h1{font-size: 5.5vw;}
+    .item h2{font-size: 5.1vw;}
+    .item p{font-size: 14px;}
+    .item span{font-size: 14px;bottom:-48px;}
+    .item:hover span{bottom: -39px;}
+}

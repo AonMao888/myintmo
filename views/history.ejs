@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History | Myint Mo</title>
+    <link rel="stylesheet" href="../history.css">
+    <meta name="description" content="My wallet history...">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <a href="javascript:window.history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <h1>History</h1>
+        </div>
+        <div class="link">
+            <a href="javascript:window.location.reload()"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+            <a href=""><i class="fa-regular fa-comment-dots"></i></a>
+        </div>
+    </nav>
+    <div class="box">
+        <h1>Payment history</h1>
+        <%all.forEach((item)=>{%>
+            <div class="item">
+                <h2><%=item.amount%>Ks</h2>
+                <p><%=item.date%></p>
+                <span><%=item.note%></span>
+            </div>
+        <%})%>
+    </div>
+</body>
+</html>
