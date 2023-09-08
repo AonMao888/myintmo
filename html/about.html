@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="shortcut icon" href="logo" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        @font-face{
+    src: url('/font');
+    font-family: jojar;
+}
+        :root{--color: #333;--back: #fff;}
+        body{margin: 0;background: var(--back);display: flex;align-items: center;justify-content: center;min-height: 100vh;font-family: jojar;}
+        .box{
+            background: transparent;
+            backdrop-filter: blur(7px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #eee;
+            width: 400px;
+            padding: 12px 0;
+            border-radius: 15px;
+        }
+        .box img{height: 123px;width: 123px;}
+        .box h1{
+            margin: 5px;
+            color: var(--color);
+            font-size: 32px;
+        }
+        .box p{margin: 0 15px;font-size: 17px;color: var(--color);}
+        .link{
+            display: flex;
+            align-items: center;
+            margin: 9px 0;
+            margin-top: 36px;
+        }
+        .link a{
+            text-decoration: none;
+            margin: 2px 19px;
+            font-size: 29px;
+            color: var(--color);
+        }
+        @media(max-width:500px){
+            .box{width: 91%;}
+            .box h1{font-size: 6.3vw;}
+            .box p{font-size: 14px;}
+            .link a{font-size: 23px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../logo" alt="">
+        <h1>Myint Mo မြင့်မိုရ်</h1>
+        <p>Myanmar's online refer investment without buy or sell any products.</p>
+        <div class="link">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-facebook-messenger"></i></a>
+            <a href=""><i class="fa-brands fa-telegram"></i></a>
+        </div>
+    </div>
+</body>
+</html>

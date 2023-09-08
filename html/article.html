@@ -141,5 +141,20 @@ li{
         <h1>Minimum for Withdraw</h1>
         <p>We doesn't limit any amount of withdraw, so you can withdraw any amount of balance that you want.</p>
     </div>
+    <script>
+        function checkdl(){
+    var getdl = localStorage.getItem("mmdl");
+    if(getdl){
+        if(getdl == "light"){
+            document.documentElement.style.setProperty("--color","#333");
+            document.documentElement.style.setProperty("--back","#fff");
+        }else{
+            document.documentElement.style.setProperty("--color","#fff");
+        document.documentElement.style.setProperty("--back","#333");
+        }
+    }else{localStorage.setItem("mmdl","light")}
+}
+checkdl()
+    </script>
 </body>
 </html>

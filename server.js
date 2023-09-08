@@ -67,6 +67,16 @@ app.get('/article',(req,res)=>{
     res.sendFile(__dirname+'/html/article.html')
 })
 
+//listen setting page
+app.get('/setting',(req,res)=>{
+    res.sendFile(__dirname+'/html/setting.html')
+})
+
+//listen about page
+app.get('/about',(req,res)=>{
+    res.sendFile(__dirname+'/html/about.html')
+})
+
 app.listen(80,()=>{
     console.log("server started with port 80");
 })

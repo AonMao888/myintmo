@@ -30,5 +30,20 @@
             </div>
         <%})%>
     </div>
+    <script>
+        function checkdl(){
+    var getdl = localStorage.getItem("mmdl");
+    if(getdl){
+        if(getdl == "light"){
+            document.documentElement.style.setProperty("--color","#333");
+            document.documentElement.style.setProperty("--back","#fff");
+        }else{
+            document.documentElement.style.setProperty("--color","#fff");
+        document.documentElement.style.setProperty("--back","#333");
+        }
+    }else{localStorage.setItem("mmdl","light")}
+}
+checkdl()
+    </script>
 </body>
 </html>

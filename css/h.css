@@ -120,7 +120,7 @@ nav .link a:hover{
     margin: 8px;
 }
 .bill{
-    border: 1px solid #eee;
+    border: 1px solid #eeeeee82;
     border-radius: 9px;
     overflow: hidden;
 }
@@ -198,7 +198,7 @@ nav .link a:hover{
     font-size: 15px;
 }
 .mem{
-    border: 1px solid #eee;
+    border: 1px solid #eeeeee82;
     border-radius: 9px;
     overflow: hidden;
     margin-top: 36px;
@@ -241,7 +241,7 @@ nav .link a:hover{
 .mem hr{
     width: 89%;
     border: none;
-    background: #eee;
+    background: #eeeeee82;
     height: 1px;
     margin: 3px auto;
 }
@@ -250,7 +250,7 @@ nav .link a:hover{
     margin: 8px;
 }
 .profile{
-    border: 1px solid #eee;
+    border: 1px solid #eeeeee82;
     border-radius: 9px;
     overflow: hidden;
     display: flex;
@@ -280,7 +280,7 @@ nav .link a:hover{
     display: flex;
     align-items: center;
     margin: 9px 0;
-    border: 1px solid #eee;
+    border: 1px solid #eeeeee82;
     border-radius: 9px;
     overflow: hidden;
 }

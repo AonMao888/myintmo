@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting | Myint Mo</title>
+    <meta name="description" content="Setting to customize some system on myint mo.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        @font-face{src: url('/font');font-family: jojar;}
+:root{--color: #333;--back: #fff;}
+body{
+    margin: 0;
+    background: var(--back);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-behavior: smooth;
+    font-family: jojar;
+}
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: royalblue;
+    padding: 8px 0;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+nav .left{display: flex;margin-left: 15px;align-items: center;}
+nav .left a{color: var(--back);font-size: 18px;margin-right: 5px;}
+nav .left h1{margin: 5px;color: var(--back);}
+.link{display: flex;align-items: center;margin-right: 9px;}
+.link a{
+    margin: 5px 9px;
+    padding: 5px;
+    font-size: 18px;
+    color: var(--back);
+}
+.box{
+    width: 456px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.div{
+    width: 96%;
+    overflow: hidden;
+    border-radius: 9px;
+    margin: 5px 0;
+    background: rgba(143, 143, 143, 0.158);
+}
+.item{
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    color: var(--color);
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 0;
+    transition: 0.4s;
+}
+.item:hover{
+    background: rgba(143, 143, 143, 0.158);
+}
+.item i{
+    margin-left: 15px;
+    font-size: 19px;
+}
+.item p{
+    margin: 5px;
+    margin-right: 15px;
+    font-size: 19px;
+}
+#google_translate_element span{
+display: none;
+}
+#google_translate_element{color: var(--back);}
+#google_translate_element select{
+    padding: 7px;
+    color: var(--color);
+    background: var(--back);
+    font-size: 17px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border-color: rgba(105, 105, 105, 0.24);
+}
+.goog-te-gadget{color: #fff;}
+@media(max-width:500px){
+    nav .left a{font-size: 17px;}
+    nav .left h1{font-size: 5vw;}
+    .link a{font-size: 17px;}
+    .box{width: 99%;}
+    .item i{font-size: 17px;}
+    .item p{font-size: 16px;}
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <a href="javascript:window.history.back()"><i class="fa-solid fa-angle-left"></i></a>
+            <h1>Settings</h1>
+        </div>
+        <div class="link">
+            <a href="javascript:window.location.reload()"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+            <a href=""><i class="fa-regular fa-comment-dots"></i></a>
+        </div>
+    </nav>
+    <div class="box">
+        <div class="div">
+            <a href="javascript:dl()" class="item">
+                <i class="fa-solid fa-moon"></i>
+                <p>Dark/Light</p>
+            </a>
+            <div class="item">
+                <i class="fa-solid fa-earth-americas"></i>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+function checkdl(){
+    var getdl = localStorage.getItem("mmdl");
+    if(getdl){
+        if(getdl == "light"){
+            document.documentElement.style.setProperty("--color","#333");
+            document.documentElement.style.setProperty("--back","#fff");
+        }else{
+            document.documentElement.style.setProperty("--color","#fff");
+        document.documentElement.style.setProperty("--back","#333");
+        }
+    }else{localStorage.setItem("mmdl","light")}
+}
+checkdl()
+function dl(){
+    var getdl = localStorage.getItem("mmdl");
+    if(getdl == "light"){
+        document.documentElement.style.setProperty("--color","#fff");
+        document.documentElement.style.setProperty("--back","#333");
+        localStorage.setItem("mmdl","dark");
+        checkdl();
+        alert("Changed to dark mode")
+    }else{
+        document.documentElement.style.setProperty("--color","#333");
+        document.documentElement.style.setProperty("--back","#fff");
+        localStorage.setItem("mmdl","light");
+        checkdl();
+        alert("Changed to light mode")
+    }
+}
+    </script>
+</body>
+</html>
