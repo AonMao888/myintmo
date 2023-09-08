@@ -11,18 +11,27 @@ const supabase = createClient(url,key)
 
 //get css file
 app.get('/h.css',(req,res)=>{
-    res.sendFile(__dirname+'/css/home.css');
+    res.sendFile(__dirname+'/css/h.css');
 })
 app.get('/history.css',(req,res)=>{
     res.sendFile(__dirname+'/css/history.css');
+})
+app.get('/home.css',(req,res)=>{
+    res.sendFile(__dirname+'/css/home.css');
+})
+app.get('/logo',(req,res)=>{
+    res.sendFile(__dirname+'/logo.png');
 })
 app.get('/font',(req,res)=>{
     res.sendFile(__dirname+'/jojar.ttf');
 })
 
 //get home page
-app.get('/',(req,res)=>{
-    res.send('Home')
+app.get('/',async(req,res)=>{
+    let {data,error} = await supabase.from('user').select('*');
+    res.render('home',{
+        all:data
+    })
 })
 
 //get user page
@@ -30,7 +39,7 @@ app.get("/u/:id",async(req,res)=>{
     let {data:user,error:uerr} = await supabase.from('user').select().eq('uid',req.params.id);
     let {data:member,error:merr} = await supabase.from('member').select().eq('inviter',req.params.id);
     if(user.length !== 0){
-        res.render('home',{
+        res.render('user',{
             id:req.params.id,
             user:user,
             member:member
@@ -51,6 +60,11 @@ app.get('/:id/history',async(req,res)=>{
     }else{
         res.send('No user payment found!');
     }
+})
+
+//listen article page
+app.get('/article',(req,res)=>{
+    res.sendFile(__dirname+'/html/article.html')
 })
 
 app.listen(80,()=>{

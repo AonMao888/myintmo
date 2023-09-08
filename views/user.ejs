@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=user[0].name%>'s profile | Myint Mo</title>
+    <link rel="stylesheet" href="../h.css">
+    <link rel="shortcut icon" href="../logo" type="image/x-icon">
+    <meta name="description" content="Myanmar online investment">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <i onclick="showmenu()" class="fa-solid fa-bars"></i>
+            <a href="">Myint Mo</a>
+        </div>
+        <div class="right">
+            <div class="link">
+                <a href="../article">Article</a>
+                <a href="../<%=id%>/history">History</a>
+            </div>
+            <div class="btn">
+                <button onclick="window.location.href = 'https://forms.gle/sbmugF6L3AohgJQy5'">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                    <p>Withdraw</p>
+                </button>
+                <button onclick="shar()">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <p>Invite</p>
+                </button>
+                <a href="javascript:qr()">
+                    <i class="fa-solid fa-qrcode"></i>
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-gear"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="home">
+        <div class="left">
+            <div class="bill">
+                <a href="https://forms.gle/sbmugF6L3AohgJQy5">ထုတ်မယ်</a>
+                <h1><%=user[0].bill%> Ks</h1>
+                <div class="billdes">
+                    <span>V<%=user[0].level%></span>
+                    <p><%=user[0].phone%></p>
+                </div>
+            </div>
+            <div class="button">
+                <button onclick="window.location.href = 'https://forms.gle/sbmugF6L3AohgJQy5'">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                    <p>Withdraw</p>
+                </button>
+                <button onclick="shar()">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <p>Invite</p>
+                </button>
+                <button onclick="qr()">
+                    <i class="fa-solid fa-qrcode"></i>
+                    <p>QR Code</p>
+                </button>
+            </div>
+            <div class="mem">
+                <h1>My members<span><i class="fa-solid fa-user-group"></i><%=member.length%></span></h1>
+                <hr>
+                <%member.forEach((item)=>{%>
+                    <p title="Invited at <%=item.date%>"><%=item.member%></p>
+                <%})%>
+            </div>
+        </div>
+        <div class="right">
+            <div class="profile">
+                <i class="fa-solid fa-user"></i>
+                <div class="proinfo">
+                    <p>Name : <span><%=user[0].name%></span></p>
+                    <p>Level : <span><%=user[0].level%></span></p>
+                    <p>Phone : <span><%=user[0].phone%></span></p>
+                    <p>Register Date : <span><%=user[0].register%></span></p>
+                </div>
+            </div>
+            <div class="idbox">
+                <p>My ID</p>
+                <span><%=id%></span>
+                <button onclick="copy()">Copy</button>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <button onclick="closemenu()"><i class="fa-solid fa-angle-left"></i>Close</button>
+        <a href="https://forms.gle/sbmugF6L3AohgJQy5">
+            <i class="fa-solid fa-sack-dollar"></i>
+            <p>Withdraw</p>
+        </a>
+        <a href="javascript:shar()">
+            <i class="fa-solid fa-user-plus"></i>
+            <p>Invite</p>
+        </a>
+        <a href="javascript:qr()">
+            <i class="fa-solid fa-qrcode"></i>
+            <p>QR Code</p>
+        </a>
+        <a href="../<%=id%>/history">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <p>My History</p>
+        </a>
+        <a href="">
+            <i class="fa-solid fa-handshake"></i>
+            <p>Privacy & Policy</p>
+        </a>
+        <a href="">
+            <i class="fa-solid fa-people-group"></i>
+            <p>About Us</p>
+        </a>
+        <a href="">
+            <i class="fa-solid fa-paper-plane"></i>
+            <p>Contact Us</p>
+        </a>
+    </div>
+    <div class="qr">
+        <h1>Invite via <span>QR Code</span></h1>
+        <img src="" alt="">
+        <button onclick="cqr()">Close</button>
+    </div>
+    <script>
+        function closemenu(){document.querySelector(".menu").style.left = '-369px'}
+        function showmenu(){document.querySelector(".menu").style.left = 0}
+        function copy(){
+            let inp = document.createElement('input');
+            inp.value = document.querySelector(".idbox span").textContent;
+            document.body.appendChild(inp);
+            inp.select();
+            document.execCommand('copy');
+            inp.remove();
+            alert("Copied")
+        }
+        document.querySelector(".home").onclick=()=>closemenu()
+        document.onscroll=()=>closemenu()
+        function qr(){document.querySelector(".qr").style.left = 0;closemenu()}
+        function cqr(){document.querySelector(".qr").style.left = '-100vw';}
+        document.querySelector(".qr img").src = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+window.location.href;
+        function shar(){
+            navigator.share({
+                title:document.title,
+                url:window.location.href
+            })
+            closemenu()
+        }
+    </script>
+</body>
+</html>

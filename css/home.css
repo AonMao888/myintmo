@@ -1,5 +1,5 @@
 @font-face{
-    src: url('/font');
+    src: url('/jojar.ttf');
     font-family: jojar;
 }
 :root{
@@ -8,441 +8,151 @@
 }
 body{
     margin: 0;
-    background: var(--back);
-    transform: scale(1);
-    font-family: jojar;
-}
-nav{
-    display: flex;
-    align-items: end;
-    width: 100%;
-    justify-content: space-between;
-    background: var(--back);
-    border-bottom: 1px solid rgba(150, 150, 150, 0.268);
-    padding: 7px 0;
-    position: sticky;
-    top: 0;
-}
-nav .left{
-    display: flex;
-    align-items: center;
-    margin-left: 9px;
-}
-nav .left i{
-    margin: 0 5px;
-    font-size: 19px;
-    cursor: pointer;
-    user-select: none;
-    color: var(--color);
-}
-nav .left a{
-    text-decoration: none;
-    font-size: 29px;
-    margin: 5px 9px;
-    color: royalblue;
-    font-weight: bold;
-}
-nav .right{
     display: flex;
     flex-direction: column;
-    align-items: end;
-    margin-right: 9px;
-}
-nav .link{
-    display: flex;
     align-items: center;
-    margin-right: 9px;
+    background: var(--back);
+    font-family: jojar;
 }
-nav .link a{
+.head{
+    width: 100%;
+    background: url('https://www.eba250.com/wp-content/uploads/bb-plugin/cache/eba250-926051128-1200x800-panorama-f6e3671f3175b857ad3eb528a085681e-5c62e7c6a78cd.jpg')no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+.link{
+    position: absolute;
+    top: 9px;
+    right: 9px;
+}
+.head h1{
+    margin: 5px;
+    font-size: 51px;
+    color: #fff;
+    text-shadow: 1px 2px 3px #333;
+}
+.head p{
+    margin: 0;
+    color: #fff;
+    font-size: 19px;
+    margin-bottom: 36px;
+    text-shadow: 1px 2px 3px #333;
+}
+.head a{
     text-decoration: none;
-    color: var(--color);
-    transition: 0.4s;
-    margin: 5px 15px;
+    color: #fff;
+    background: rgb(10, 186, 10);
+    padding: 10px 51px;
+    border-radius: 51px;
+    border: 1px solid #fff;
     font-size: 17px;
 }
-nav .link a:hover{
-    color: royalblue;
+.link a{
+    background: none;
+    border: none;
+    text-decoration: underline;
+    padding: 5px;
+    margin: 9px;
 }
 .btn{
     display: flex;
     align-items: center;
-    margin-right: 9px;
-}
-.btn button{
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    margin: 3px 7px;
-    padding: 8px 15px;
-    color: var(--back);
-    outline: none;border: none;
-    background: royalblue;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.4s;
-}
-.btn button i{
-    margin: 3px;
-    font-size: 17px;
-}
-.btn button p{
-    margin: 3px;
-    font-size: 15px;
-}
-.btn button:hover{
-    background: rgb(30, 72, 200);
-}
-.btn a{
-    text-decoration: none;
-    padding: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    color: royalblue;
-    font-size: 18px;
-    margin: 2px 5px;
-    transition: 0.4s;
-}
-.btn a:hover{
-    background: royalblue;
-    color: #fff;
-}
-.home{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-top: 9px;
-}
-.home .left{
-    width: 450px;
-    overflow: hidden;
-    margin: 8px;
-}
-.bill{
-    border: 1px solid #eee;
-    border-radius: 9px;
-    overflow: hidden;
-}
-.bill a{
-    text-decoration: none;
-    color: var(--back);
-    float: right;
-    background: royalblue;
-    padding: 6px 12px;
-    font-size: 14px;
-    border-radius: 6px;
-    margin: 5px;
-    transition: 0.4s;
-}
-.bill a:hover{
-    background: rgb(30, 72, 200);
-}
-.bill h1{
-    margin: 5px;
-    margin-left: 15px;
-    color: var(--color);
-    font-size: 36px;
-    margin-top: 15px;
-}
-.billdes{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 12px;
-}
-.billdes span{
-    color: #fff;
-    background: gold;
-    margin: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 15px;
-    margin-right: 5px;
-    font-size: 15px;
-    padding: 4px 9px;
-    border-radius: 51px;
-}
-.billdes p{
-    margin: 2px 5px;
-    color: var(--color);
-    font-size: 17px;
-}
-.button{
-    display: flex;
-    padding: 3px 0;
-    align-items: center;
-}
-.button button{
-    display: flex;
-    align-items: center;
-    background: royalblue;
-    color: #fff;
-    margin: 5px;
-    cursor: pointer;
-    outline: none;border: none;
-    padding: 7px 15px;
-    border-radius: 51px;
-    transition: 0.4s;
-}
-.button button:hover{
-    background: rgb(30, 72, 200);
-}
-.button button i{
-    font-size: 17px;
-    margin: 3px;
-}
-.button button p{
-    margin: 3px;
-    font-size: 15px;
-}
-.mem{
-    border: 1px solid #eee;
-    border-radius: 9px;
-    overflow: hidden;
-    margin-top: 36px;
-    transition: 0.4s;
-    transform: scale(1);
-}
-.mem:hover{
-    border-color: rgb(144, 144, 144);
-}
-.mem h1{
-    margin: 5px;
-    color: var(--color);
-    font-size: 27px;
-    margin-top: 8px;
-    margin-left: 15px;
-    display: flex;
-    align-items: center;
-}
-.mem h1 span{
-    background: purple;
-    color: #fff;
-    font-size: 12px;
-    margin-left: 7px;
-    padding: 5px 9px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    border-radius: 51px;
-}
-.mem h1 span i{
-    margin-right: 5px;
-}
-.mem p{
-    margin: 5px;
-    color: var(--color);
-    font-size: 17px;
-    margin-left: 15px;
-}
-.mem hr{
-    width: 89%;
-    border: none;
-    background: #eee;
-    height: 1px;
-    margin: 3px auto;
-}
-.home .right{
-    width: 400px;
-    margin: 8px;
-}
-.profile{
-    border: 1px solid #eee;
-    border-radius: 9px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-.profile .fa-user{
-    font-size: 99px;
-    background: #eee;
-    padding: 27px 32px;
-    border-radius: 50%;
-    margin: 7px;
-    margin-left: 9px;
-}
-.proinfo{
-    width: 100%;
-}
-.proinfo p{
-    margin: 5px;
-    color: var(--color);
-    font-size: 17px;
-    word-break: break-all;
-}
-.proinfo p span{
-    color: royalblue;
-}
-.idbox{
-    display: flex;
-    align-items: center;
-    margin: 9px 0;
-    border: 1px solid #eee;
-    border-radius: 9px;
-    overflow: hidden;
-}
-.idbox p{
-    margin: 5px;
-    color: var(--color);
-    margin-left: 9px;
-    font-size: 15px;
-    white-space: nowrap;
-}
-.idbox span{
-    width: 100%;
-    font-size: 17px;
-    margin-left: 5px;
-    margin-right: 5px;
-    background: none;
-    padding: 5px;
-    outline: none;
-    border: none;
-    color: royalblue;
-}
-.idbox button{
-    background: dimgray;
-    color: #fff;
-    outline: none;border: none;
-    font-size: 15px;
-    padding: 8px 15px;
-    cursor: pointer;
-    transition: 0.4s;
-}
-.idbox button:active{
-    background: #333;
-}
-.menu{
-    position: fixed;
-    z-index: 1;
-    background: royalblue;
-    top: 0;
-    left: -369px;transition: 0.4s;
-    width: 272px;
-    height: 100vh;
-    border-right: 2px solid var(--back);
-}
-.menu a{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    margin: 2px 0;
-    padding: 9px 0;
-    transition: 0.4s;
-    color: var(--back);
-}
-.menu a:hover{
     background: var(--back);
-    color: royalblue;
+    box-shadow: 1px 2px 3px #3333335d;
+    border-radius: 9px;
+    transform: translateY(-63px);
 }
-.menu a i{
-    font-size: 19px;
-    margin-left: 15px;
-    margin-right: 8px;
-}
-.menu a p{
-    margin: 5px;
-}
-.menu button{
-    margin: 9px 7px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    outline: none;
-    color: var(--back);
-    font-size: 17px;
-    transition: 0.4s;
-}
-.menu button:hover{
-    color: rgb(255, 25, 25);
-}
-.menu button i{
-    margin-right: 5px;
-}
-.qr{
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: -100vw;
-    width: 100%;
-    height: 100%;
-    transition: 0.4s;
+.i{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: #ffffff12;
-    backdrop-filter: blur(3px);
+    margin: 9px 15px;
+    padding: 5px 19px;
 }
-.qr h1{
-    margin: 9px;
-    color: var(--color);
-    font-size: 36px;
-}
-.qr h1 span{
-    font-size: 19px;
-    color: royalblue;
-}
-.qr img{
-    width: 163px;
-    height: 163px;
+.i img{
+    height: 78px;
     object-fit: contain;
     object-position: center;
     user-select: none;
-    background: var(--back);
-    padding: 9px;
+    margin: 5px;
 }
-.qr button{
-    margin-top: 15px;
-    background: rgb(255, 35, 35);
-    color: var(--back);
-    outline: none;border: none;
-    padding: 8px 19px;
+.i p{
+    margin: 3px;
+    color: var(--color);
+    font-size: 17px;
+    text-align: center;
+}
+.list{
+    width: 789px;
+}
+.list h1{
+    font-size: 32px;
+    margin: 9px;
+    color: var(--color);
+}
+table{
+    width: 96%;
+    background: var(--back);
+    margin: 2px auto;
     border-radius: 5px;
-    font-size: 15px;
-    cursor: pointer;
+    transition: 0.4s;
+}
+th{
+    background: royalblue;
+    padding: 9px;
+    color: var(--back);
+    font-size: 16px;
+}
+th:nth-child(1){
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+th:nth-child(4){
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+td{
+    text-align: center;
+    padding: 7px;
+    font-size: 16px;
+    color: var(--color);
+}
+td a{
+    color: royalblue;
 }
 
-@media(max-width:900px){
-    nav .link a{font-size: 16px;}
-    nav .left a{font-size: 27px;}
-    .btn button i{font-size: 16px;}
-    .btn button p{font-size: 14px;}
-    .home .left{width: 400px;}
-    .bill h1{font-size: 4vw;}
-    .billdes span{font-size: 14px;}
-    .billdes p{font-size: 14px;}
-    .bill a{font-size: 13px;}
-    .button button{padding: 5px 10px;}
-    .button button i{font-size: 15px;}
-    .button button p{font-size: 14px;}
-    .mem h1{font-size: 23px;}
-    .mem h1 span{font-size: 12px;}
-    .mem p{font-size: 14px;}
-    .home .right{width: 369px;}
-    .profile .fa-user{font-size: 69px;}
-    .proinfo p{font-size: 15px;}.idbox p{font-size: 14px;}
-    .idbox span{font-size: 16px;}.idbox button{font-size: 14px;}
+@media(max-width:815px){
+    .head h1{font-size: 6vw;}
+    .head p{font-size: 17px;}
+    .head a{font-size: 15px;}
+    .btn{width: 96%;justify-content: space-evenly;transform: translateY(-51px);}
+    .list{width: 99%;}
+    .i{padding: 5px;margin: 5px;}
+    .i img{height: 63px;}
+    .i p{font-size: 15px;}
+    .list h1{font-size: 24px;}
+    th{font-size: 15px;}
+    td{font-size: 14px;}
 }
-@media(max-width:690px){
-    nav .left a{font-size: 24px;}
-    .home{flex-wrap: wrap;}
-    .home .left{min-width: 96%;}
-    .home .right{min-width: 96%;}
-    .btn button{padding: 7px 12px;margin: 3px 5px;}
-    .btn button i{font-size: 14px;}
-    .btn button p{font-size: 13px;}
-    .btn a{font-size: 15px;margin: 2px 4px;}
+@media(max-width:616px){
+    .head h1{font-size: 6.3vw;}
+    .head p{font-size: 17px;}
+    .head a{font-size: 15px;}
+    .btn{width: 98%;}
+    .i img{height: 51px;}
+    .i p{font-size: 13px;}
+    .list h1{font-size: 19px;}
+    th{font-size: 14px;}
 }
 @media(max-width:500px){
-    nav .left a{font-size: 19px;}
-    .btn{margin-right: 0;}
-    .btn button{padding: 7px;margin: 3px;}
-    .btn button p{display: none;}
-    .btn a{margin: 3px;}
-    .bill h1{font-size: 7vw;}
-    .mem h1{font-size: 4.5vw;}
+    .head h1{font-size: 8vw;}
+    .i p{font-size: 11px;}
+    .i{padding: 3px;margin: 3px;margin-top: 7px;}
+    table{width: 98%;}
+    td{font-size: 13px;}
 }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
+    <meta name="description" content="Article for any user to read and follow.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        @font-face{
+    src: url('/font');
+    font-family: jojar;
+}
+        :root{
+    --color: #333;
+    --back: #fff;
+}
+body{
+    margin: 0;
+    background: var(--back);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-behavior: smooth;
+    font-family: jojar;
+}
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: royalblue;
+    padding: 8px 0;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+nav .left{
+    display: flex;
+    margin-left: 15px;
+    align-items: center;
+}
+nav .left a{
+    color: var(--back);
+    font-size: 18px;
+    margin-right: 5px;
+}
+nav .left h1{
+    margin: 5px;
+    color: var(--back);
+}
+.link{
+    display: flex;
+    align-items: center;
+    margin-right: 9px;
+}
+.link a{
+    margin: 5px 9px;
+    padding: 5px;
+    font-size: 18px;
+    color: var(--back);
+}
+.box{
+    width: 639px;
+    margin: 9px 0;
+    margin-bottom: 19px;
+}
+.box h1{
+    margin: 5px 9px;
+    color: var(--color);
+    font-size: 27px;
+}
+.box p{
+    margin: 5px 9px;
+    color: var(--color);
+    font-size: 19px;
+}
+.space{
+    width: 100%;
+    height: 51px;
+}
+ul{
+    width: max-content;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 9px;
+    list-style: none;
+}
+li{
+    padding: 3px 5px;
+    color: royalblue;
+    font-size: 18px;
+}
+@media(max-width:688px){
+    .box{width: 98%;}
+}
+@media(max-width:500px){
+    nav{padding: 5px 0;}
+    nav .left a{font-size: 15px;}
+    nav .left h1{font-size: 19px;}
+    .link a{font-size: 15px;}
+    .box h1{font-size: 5.1vw;}
+    .box p{font-size: 14px;}
+    li{font-size: 14px;}
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <a href="javascript:window.history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <h1>Article</h1>
+        </div>
+        <div class="link">
+            <a href="javascript:window.location.reload()"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+            <a href=""><i class="fa-regular fa-comment-dots"></i></a>
+        </div>
+    </nav>
+    <div class="box">
+        <h1>What is Myint Mo?</h1>
+        <p><b>Myint Mo</b> is an online refer investment. You can get pay or earn by refer friends or people you know.</p>
+        <div class="space"></div>
+        <h1>Minimum recharge</h1>
+        <p>There have minimum recharge for any new user, the minimum recharge is <b>3000Ks</b>.</p>
+        <div class="space"></div>
+        <h1>Level in Myint Mo</h1>
+        <p>There have 3 level in <b>Myint Mo</b>.</p>
+        <ul>
+            <li>Level 1 (50% per refer, without commission)</li>
+            <li>Level 2 (50% per refer, 16.67% commission)</li>
+            <li>Level 3 (50% per refer, 33.36% commission)</li>
+        </ul>
+        <p>At <b>level 1</b>, you will get <b>1500Ks</b> if you refer a person to become your member, you won't get any commission from your member!</p>
+        <p>At <b>level 2</b>, you will get <b>1500Ks</b> if you refer a person to become your member, you will get <b>500Ks(16.67%) </b>commission from your members.</p>
+        <p>At <b>level 3</b>, you will get <b>1500Ks</b> if you refer a person to become your member, you will get <b>1000Ks(33.36%) </b>commission from your members.</p>
+        <div class="space"></div>
+        <h1>Maximum requirements for upgrad level</h1>
+        <p>You must have at last <b>3 members</b> to upgrade level from <b>1 to 2</b>!</p>
+        <p>You must have at last <b>10 members</b> to upgrade level from <b>2 to 3</b>!</p>
+        <div class="space"></div>
+        <h1>Minimum for Withdraw</h1>
+        <p>We doesn't limit any amount of withdraw, so you can withdraw any amount of balance that you want.</p>
+    </div>
+</body>
+</html>
